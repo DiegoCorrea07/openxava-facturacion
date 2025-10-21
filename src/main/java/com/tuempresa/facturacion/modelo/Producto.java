@@ -17,6 +17,10 @@ public class Producto {
 	@Column(length=50)
 	String descripcion;
 	
+	@ManyToOne(fetch=FetchType.LAZY)
+	@DescriptionsList
+	Autor autor;
+	
 	@ManyToOne(
 			fetch=FetchType.LAZY ,
 			optional= true)
@@ -32,5 +36,4 @@ public class Producto {
 	
 	@TextArea
 	String observaciones;
-	
 }
